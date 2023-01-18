@@ -33,6 +33,11 @@
     }
   }
   </style>
+
+
+
+
+
 </head>
 <body>
 
@@ -121,28 +126,116 @@
         HERE:</p>  
         <div class="form-group">
           <label for="comment">Versicle:</label>
-          <textarea class="form-control" rows="5" id="Versicle"></textarea>
+          <!--textarea class="form-control" rows="5" id="Versicle"></textarea-->
+          <textarea id="myTextarea" class="form-control">
+            Copy and Paste your Text Here</textarea>
         </div>
-        <input type="submit" class="btn btn-info" value="Execute">
+        <button type="button" onclick="myFunction()">Try it</button>
         
     </div>
     <div class="col-sm-4">
       <div class="well">
        <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Complete the blanks with your memory power:</p>
        <p><b>Here comes the text with spaces</b></p> 
+       <p id="demo"></p>
       </div>
       <div class="well">
        <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Complete this new version with the power of your mind</p>
        <p><b>Here comes a second version of the text with spaces</b></p> 
+       <p id="demo2"></p>
       </div>
     </div>
   </div>
 </div><br>
 
+
+
+
+
+
 <footer class="container-fluid text-center">
   <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">daniela.eunice.ortiz@gmail.com</p>
 </footer>
 
+<script>
+  function myFunction() {
+  let word="dsdsd";
+  let word_number=0;
+  let word_length=0;
+  let pat="";  
+  var x = document.getElementById("myTextarea").value;
+  
+  
+  for(let i=0;i<x.length;i++){
+              word="";
+              word_length=0;
+  
+              while (x[i]!==' ' && i<x.length){
+                 word=word+x[i];
+                 word_length++;
+                 i++;
+              }
+              word_number++;
+                 
+              if (word_length>6){
+              
+                  word="";  
+                  for(let k=0; k<word_length;k++)
+                          word=word+"_";
+  
+                   
+                 }
+                 pat=pat+ " "+ word;
+                 console.log(pat);
+          }
+  
+  
+  
+  
+    document.getElementById("demo").innerHTML = pat;
+    myFunction2();
+  }
+
+  function myFunction2() {
+  let word="dsdsd";
+  let word_number=0;
+  let word_length=0;
+  let pat="";  
+  var x = document.getElementById("myTextarea").value;
+  
+  
+  for(let i=0;i<x.length;i++){
+              word="";
+              word_length=0;
+  
+              while (x[i]!==' ' && i<x.length){
+                 word=word+x[i];
+                 word_length++;
+                 i++;
+              }
+              word_number++;
+                 
+              if (word_length>3){
+              
+                  word="";  
+                  for(let k=0; k<word_length;k++)
+                          word=word+"_";
+  
+                   
+                 }
+                 pat=pat+ " "+ word;
+                 console.log(pat);
+          }
+  
+  
+  
+  
+    document.getElementById("demo2").innerHTML = pat;
+  }
+
+  </script>
+
 </body>
 </html>
+
 
